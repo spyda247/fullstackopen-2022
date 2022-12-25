@@ -1,0 +1,40 @@
+title Excercise-0.5
+
+note over browser:
+Browser sends a GET request
+end note
+
+
+browser-->server: https://studies.cs.helsinki.fi/exampleapp/spa
+server-->browser: HTML-Code HTTP status code 200
+
+note over browser:
+Browser parses HTML-code and makes three more HTTP requests 
+for fetching style sheet (main.css), JavaScript code (spa.js), 
+and raw data of the notes (data.json).
+end note
+
+note over server:
+Server responds with requested files
+end note
+browser-->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: CSS-Code HTTP status code 200
+browser-->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+server-->browser: JS-Code HTTP status code 200
+
+note over browser:
+Browser parses code in spa.js, and sends 
+new GET request to server for data.json
+end note
+
+browser-->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: JSON-Code HTTP status code 200
+
+note over browser: 
+Browser receives the JSON file, 
+excecutes code in spa.js, parses data
+to an array object, loops through each
+note and renders it for the user
+end note
+
+

@@ -1,0 +1,56 @@
+title Excercise-0.4
+
+user-->browser: Enters a new note into text field and clicks the submiit button
+note over browser:
+Browser executes code that 
+creates a post request with 
+the input data as payload and 
+then sends to the server
+end note
+
+browser-->server: https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note over server:
+Server executes code to parse the POST request
+body, extract the data, creates new notes object
+and adds it to the notes array.
+Server responds with HTTP status code 302. 
+This is a URL redirect to /exampleapp/notes
+in the server response Location header
+end note
+
+server-->browser: Redirect HTTP Status Code: 302
+browser-->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML-Code HTTP status code 200
+
+note over browser:
+Browser parses HTML-code and makes three more HTTP requests 
+for fetching style sheet (main.css), JavaScript code (main.js), 
+and raw data of the notes (data.json).
+end note
+
+note over server:
+Server responds with requested files
+end note
+browser-->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: CSS-Code HTTP status code 200
+browser-->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: JS-Code HTTP status code 200
+
+note over browser:
+Browser parses code in main.js, and sends 
+new GET request to server for data.json
+end note
+
+browser-->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: JSON-Code HTTP status code 200
+
+note over browser: 
+Browser receives the JSON file, 
+excecutes code in main.js, parses data
+to an array object, loops through each
+note and renders it for the user
+end note
+
+
+browser-->user: Renders HTML page with new data
