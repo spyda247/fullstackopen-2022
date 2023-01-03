@@ -21,7 +21,7 @@ const AnecdotesWithMostVotes = ({ anecdotes, votes }) => {
   const maxVoteIndex = votes.indexOf(Math.max(...votes))
   return (
     <div>
-      <h1>Anecdotes with most votes</h1>
+      <h1>Anecdotes with Most votes</h1>
       <p>{anecdotes[maxVoteIndex]} <br /> has {votes[maxVoteIndex]} votes.</p>
     </div>
   )
