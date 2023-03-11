@@ -17,8 +17,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:ui": "npm run build && cp -r ./build ../../../part3/phonebookapp-backend/Exercise3.1-3.11/",
-    "deploy": "cd ../../../part3/phonebookapp-backend/Exercise3.1-3.11/ && fly deploy",
+    "build:ui": "npm run build && cp -r ./build ../../../part3/Exercise3.1-3.11/",
+    "deploy": "cd ../../../part3/Exercise3.1-3.11/ && fly deploy",
     "deploy:full": "npm run build:ui && npm run deploy",
     "logs:prod": "fly logs"
   },
